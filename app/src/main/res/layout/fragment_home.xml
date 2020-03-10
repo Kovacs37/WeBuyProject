@@ -6,31 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
+    <!-- <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="edmt.dev.androidgridlayout.MainActivity">
 
-
+    -->
 
         <LinearLayout
+            android:id="@+id/main"
             android:orientation="vertical"
             android:background="@drawable/bg"
-            android:weightSum="27"
+            android:weightSum="13"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -124,7 +112,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/bob"
+                            android:src="@drawable/search"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -151,6 +139,7 @@
                     android:layout_height="0dp"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_marginTop="15dp"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
@@ -166,7 +155,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/bob"
+                            android:src="@drawable/pending"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -193,6 +182,7 @@
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
+                    android:layout_marginTop="15dp"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp"
                     >
@@ -205,7 +195,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/bob"
+                            android:src="@drawable/validated"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -234,7 +224,7 @@
 
         </LinearLayout>
 
-    </ScrollView>
+   <!-- </ScrollView> -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

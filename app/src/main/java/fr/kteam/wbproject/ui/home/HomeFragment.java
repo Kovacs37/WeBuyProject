@@ -1,5 +1,7 @@
 package fr.kteam.wbproject.ui.home;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,10 +18,12 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import fr.kteam.wbproject.MainActivity;
 import fr.kteam.wbproject.R;
-import fr.kteam.wbproject.ShopActivity;
+import fr.kteam.wbproject.ui.magasins.MagasinsFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -32,11 +36,11 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
+       // final TextView textView = root.findViewById(R.id.text_home);
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+             //   textView.setText(s);
             }
         });
 
@@ -99,19 +103,23 @@ public class HomeFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent intent = null;
+
+                    NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+
+
                     switch (finalI){
                         case 0:
-                             intent = new Intent(getActivity(), ShopActivity.class);
+                            navController.navigate(R.id.magasins);
                             break;
                         case 1:
-                             intent = new Intent(getActivity(), ShopActivity.class);
+                           //  intent = new Intent(getActivity(), ShopActivity.class);
                             break;
                         default:
-                             intent = new Intent(getActivity(), ShopActivity.class);
+                          //   intent = new Intent(getActivity(), ShopActivity.class);
                             break;
                     }
                     //intent.putExtra("info","This is activity from card item index  "+finalI);
-                    startActivity(intent);
+                   // startActivity(intent);
 
                 }
             });
