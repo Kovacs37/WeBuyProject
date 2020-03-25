@@ -55,4 +55,12 @@
     <string name="prix_l_unit">Prix à l\'unité</string>
     <string name="unit_price">1.50€</string>
     <string name="reserver">Réserver</string>
+    <string name="promo_texte">20 rouleaux de PQ \n </string>
+    <string name="prix_cardview">2,90€</string>
+    <string name="user_name">User name</string>
+    <string name="changer_mot_de_passe">Changer mot de passe</string>
+    <string name="n_moyens_de_paiement">\n Moyens de paiement</string>
+    <string name="selectionner_moyen_de_paiment">Selectionner moyen de paiment</string>
+    <string name="date_de_naissance">Date de naissance</string>
+    <string name="adresse">adresse</string>
 </resources>

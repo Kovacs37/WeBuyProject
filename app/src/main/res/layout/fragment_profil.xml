@@ -23,7 +23,7 @@
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User name" />
+            android:text="@string/user_name" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,18 +31,19 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/prompt_email" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/email_input"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:text="test@gamil.com" />
                 android:inputType="textEmailAddress" />
         </LinearLayout>
 
@@ -56,14 +57,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="adresse" />
+                android:text="@string/adresse" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/adresse_input"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:text="11 rue des fleurs" />
                 android:inputType="textPostalAddress" />
 
         </LinearLayout>
@@ -74,39 +76,40 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/datenaissance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Date de naissance" />
+                android:text="@string/date_de_naissance" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/datenaissance_input"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:text="11/03/2008" />
                 android:inputType="date" />
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/ChangePass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Changer mot de passe" />
+            android:text="@string/changer_mot_de_passe" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/moyenpaiment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="\n Moyens de paiement" />
+            android:text="@string/n_moyens_de_paiement" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/selectmoyenpaiement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selectionner moyen de paiment" />
+            android:text="@string/selectionner_moyen_de_paiment" />
 
     </LinearLayout>
 
