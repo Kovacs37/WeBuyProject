@@ -8,10 +8,191 @@
     android:id="@+id/promotions_detail"
     tools:context=".ui.promotions.PromotionsDetail">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/promoName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="@string/nom_de_la_promotion"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="149dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/bob"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/publi_par"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/namePublisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:gravity="right"
+                android:text="@string/name_publisher"
+                tools:ignore="RtlHardcoded" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/date_de_publication" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/date_publication"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/heure_publication" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TextNbArticle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nombre_d_articles_disponibles" />
+
+            <TextView
+                android:id="@+id/nb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:width="0dp"
+                android:maxWidth="0dp"
+                android:text="@string/number_article_available" />
+
+            <TextView
+                android:id="@+id/TextNbArticleChoisis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nombre_d_articles_voulu" />
+
+            <EditText
+                android:id="@+id/nbArticlesChoosen"
+                android:layout_width="50dp"
+                android:layout_height="56dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text="@string/number_article_choosen" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TextLieuRDV"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/point_de_rdv" />
+
+            <TextView
+                android:id="@+id/LieuRDV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/meetingPoint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/priceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/prix_l_unit" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/unit_price" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/reserverButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/reserver"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

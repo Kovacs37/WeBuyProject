@@ -1,30 +1,20 @@
 package fr.kteam.wbproject.ui.magasins;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.location.Location;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
 import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -33,10 +23,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import fr.kteam.wbproject.R;
-import fr.kteam.wbproject.ui.promotions.PromotionsFragment;
 
 public class MagasinsFragment extends Fragment implements GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener, GoogleMap.OnInfoWindowClickListener,
@@ -53,12 +42,8 @@ public class MagasinsFragment extends Fragment implements GoogleMap.OnMyLocation
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-      //  SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.googleMap);
-
-        //if (mapFragment != null) {
-        //    mapFragment.getMapAsync(this);
-
-        //}
+        FloatingActionButton fab = getActivity().findViewById(R.id.fab);
+        fab.setVisibility(View.INVISIBLE);
 
 
         if (mapFragment == null) {
@@ -66,12 +51,13 @@ public class MagasinsFragment extends Fragment implements GoogleMap.OnMyLocation
             mapFragment.getMapAsync(new OnMapReadyCallback() {
                 @Override
                 public void onMapReady(GoogleMap googleMap) {
+
                     LatLng latLng = new LatLng(47.356007, 0.698019);
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14)); // not working
                     googleMap.addMarker(new MarkerOptions().position(latLng)
                             .title("Leclerc")
                             .flat(true)
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.leclerc)));
-
                     googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
 
                         @Override
@@ -80,18 +66,12 @@ public class MagasinsFragment extends Fragment implements GoogleMap.OnMyLocation
                             navController.navigate(R.id.promotions);
                         }
                     });
-
-
-
                     googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                         @Override
                         public boolean onMarkerClick(Marker marker) {
                             //int position = (int)(marker.getTag());
                             Toast.makeText(getActivity(), "clicked", Toast.LENGTH_SHORT).show();
                             //Using position get Value from arraylist
-
-
-
                             return false;
                         }
                     });

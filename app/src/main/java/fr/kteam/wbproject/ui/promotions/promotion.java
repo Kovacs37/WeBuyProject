@@ -9,6 +9,8 @@ public class promotion {
     private float prixTotal, prixParArticle;
     private int nbArticles, nbArticleParPersonne;
     private boolean validated;
+    private String publisher;
+    private String lieuxRDV;
 
     public promotion() {
         this.magasin = "magasin";
@@ -19,10 +21,12 @@ public class promotion {
         this.prixParArticle = 10;
         this.nbArticles = 100;
         this.nbArticleParPersonne = 2;
+        this.publisher = "default";
+        this.lieuxRDV = "entree du magasin";
         validated = false;
     }
 
-    public promotion(String magasin, int idMagasin, String titre, String description, float prixTotal, float prixParArticle, int nbArticles, int nbArticleParPersonne) {
+    public promotion(String magasin, int idMagasin, String titre, String description, float prixTotal, float prixParArticle, int nbArticles, int nbArticleParPersonne, String publisher, String lieuxRDV) {
         this.magasin = magasin;
         this.idMagasin = idMagasin;
         this.titre = titre;
@@ -31,6 +35,8 @@ public class promotion {
         this.prixParArticle = prixParArticle;
         this.nbArticles = nbArticles;
         this.nbArticleParPersonne = nbArticleParPersonne;
+        this.publisher = publisher;
+        this.lieuxRDV = lieuxRDV;
         validated = false;
     }
 

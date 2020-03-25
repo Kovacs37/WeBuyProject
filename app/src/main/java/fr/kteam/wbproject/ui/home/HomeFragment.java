@@ -1,16 +1,11 @@
 package fr.kteam.wbproject.ui.home;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,9 +16,9 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import fr.kteam.wbproject.MainActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import fr.kteam.wbproject.R;
-import fr.kteam.wbproject.ui.magasins.MagasinsFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -43,14 +38,22 @@ public class HomeFragment extends Fragment {
              //   textView.setText(s);
             }
         });
+        FloatingActionButton fab = getActivity().findViewById(R.id.fab);
+        fab.setImageResource(android.R.drawable.ic_menu_preferences);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                navController.navigate(R.id.profil);
 
+            }
+        });
+        fab.setVisibility(View.VISIBLE);
 
-        // this can crash
-       // mainGrid = (GridLayout) root.findViewById(R.id.mainGrid);
-
-        //Set Event
-       // setSingleEvent(mainGrid);
-
+        //NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
+        //Menu menu = navigationView.getMenu();
+        //MenuItem search = menu.findItem(R.id.search);
+        //search.setVisible(true);
 
         return root;
     }
@@ -102,7 +105,7 @@ public class HomeFragment extends Fragment {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = null;
+                    // Intent intent = null;
 
                     NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
 
@@ -112,7 +115,7 @@ public class HomeFragment extends Fragment {
                             navController.navigate(R.id.magasins);
                             break;
                         case 1:
-                           //  intent = new Intent(getActivity(), ShopActivity.class);
+                            navController.navigate(R.id.promotions);
                             break;
                         default:
                           //   intent = new Intent(getActivity(), ShopActivity.class);
